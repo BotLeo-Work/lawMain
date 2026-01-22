@@ -1010,14 +1010,17 @@
 
             .carousel-img,
             .carousel-img.active {
-                width: 90%;
-                /* Make image larger on mobile */
-                height: auto;
-                /* Allow height to adjust naturally */
-                max-height: 100%;
+                width: 100%;
+                /* Full width of container */
+                height: 100%;
+                /* Full height of container */
+                object-fit: contain;
+                /* Ensure entire image is visible */
                 top: 50%;
                 transform: translate(-50%, -50%) !important;
                 /* Center and override scale */
+                background-color: transparent;
+                /* Remove white background if image is smaller */
             }
 
             .carousel-img.prev,
