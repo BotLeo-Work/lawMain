@@ -38,6 +38,8 @@
             line-height: 1.6;
             color: #333;
             background-color: var(--cream);
+            overflow-x: hidden;
+            width: 100%;
         }
 
         .container {
@@ -367,6 +369,33 @@
             background-color: white;
             color: var(--primary);
             border-color: white;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: nowrap;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .hero-buttons .btn-secondary {
+            margin-left: 0;
+        }
+
+        @media (max-width: 480px) {
+            .hero-buttons {
+                gap: 10px;
+            }
+
+            .hero-buttons .btn {
+                padding: 12px 15px;
+                font-size: 0.9rem;
+                white-space: nowrap;
+                min-width: fit-content;
+            }
         }
 
         /* Quotes Section */
@@ -846,16 +875,17 @@
         .award-card {
             flex: 0 0 320px;
             background-color: rgba(255, 255, 255, 0.1);
-            padding: 35px 25px;
+            padding: 25px 20px;
             border-radius: 12px;
             border: 1px solid rgba(255, 255, 255, 0.2);
             text-align: center;
             transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
-            height: 250px;
+            /* Reduced min-height for compact look */
+            min-height: 360px;
             position: relative;
             overflow: hidden;
         }
@@ -865,6 +895,45 @@
             background-color: rgba(255, 255, 255, 0.15);
             border-color: var(--secondary);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .award-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+            width: 100%;
+            flex-shrink: 0;
+        }
+
+        .award-icon i {
+            display: block;
+        }
+
+        .award-title {
+            font-size: 1.05rem;
+            color: white;
+            margin-bottom: 10px;
+            font-weight: 500;
+            line-height: 1.35;
+            height: 100px;
+            /* Fixed height to align descriptions */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            width: 100%;
+        }
+
+        .award-card p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.4;
+            margin: 0;
+            text-align: center;
         }
 
         .award-group-title {
@@ -2159,8 +2228,10 @@
             <p>Actionism Advisory is a boutique consultancy based in the UAE with regional reach and global expertise in
                 law, finance, ESG/sustainability, and cultural intelligence for organizations navigating complex
                 regulatory landscapes and market entry.</p>
-            <a href="#services" class="btn btn-secondary">Our Services</a>
-            <a href="#contact" class="btn">Get in Touch</a>
+            <div class="hero-buttons">
+                <a href="#services" class="btn btn-secondary">Our Services</a>
+                <a href="#contact" class="btn">Get in Touch</a>
+            </div>
         </div>
     </section>
 
@@ -2427,7 +2498,8 @@
                         <h3 class="award-title">Leadership Excellence Women Leadership SOAR Program<br><br>Top Arab
                             Talent
                         </h3>
-                        <p>Recognised for leadership excellence, mentoring and impact by senior management of a known
+                        <p style="margin-top: 15px;">Recognised for leadership excellence, mentoring and impact by
+                            senior management of a known
                             international bank.</p>
                     </div>
                     <div class="award-card">
